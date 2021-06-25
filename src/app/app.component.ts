@@ -25,11 +25,11 @@ export class AppComponent  implements OnInit{
         
     constructor (){
       //if token present make check fasle
+     
       if(this.token.hasOwnProperty("access_token")){
         //storing token to localstorage
         localStorage.setItem('token', this.token.access_token);
-
-        this.check = false;
+              this.check = false;
        } 
      }
 
