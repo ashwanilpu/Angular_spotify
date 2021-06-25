@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   
   authEndpoint="https://accounts.spotify.com/authorize";
 
-  redirectUri="http://localhost:4200/";
+  redirectUri="https://angularspotify.netlify.app/";
  
   clientId="f01abf236ff84598bb5ab78e31e11b4e";
  
