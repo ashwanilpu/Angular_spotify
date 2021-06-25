@@ -1,0 +1,28 @@
+
+<div>
+    <!-- recommendation section -->
+    <h1 class="heading">Recommendation</h1>
+    <!-- recommendation container -->
+  <div class="box_container">
+     <div class="box" *ngFor="let i of topArtist"> 
+        <a style="text-decoration: none;width: 100%;display: flex;justify-content: space-evenly;align-items: center;" href={{i.external_urls.spotify}} target="_blank">
+        <img src = "{{i.images[1].url}}"  style="height: 80px;"/>
+        <span style="color: white;">{{ i.name}}</span>
+        <mat-icon class="play_icon">play_circle_filled</mat-icon>
+        </a>
+    </div>
+</div>
+<!-- Albums Section -->
+ <h1 class="heading">Albums</h1>
+ <!-- card that contain album images and name -->
+    <div class="album_container"> 
+        <div class="album_card" *ngFor="let album of albums"> 
+          <a style="text-decoration: none;" href={{album.external_urls.spotify}} target="_blank">
+            <img src="{{album.images[1].url }}" style="width: 100%;"/>
+            <div class="album_card_bottom">
+                <span >{{ album.name}}</span>
+            </div>
+          </a>
+        </div>
+    </div>
+</div>

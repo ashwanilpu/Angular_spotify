@@ -1,0 +1,47 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.logo_container{
+  display: flex ;
+  align-items: center;
+}
+
+.sidebar{
+  background-color: black;
+  color: white;
+}
+.upnav{
+  background-color: black;
+  
+}
+.link{
+  color: white;
+}
+.btn{
+  color: white;
+  margin: 10px;
+}
+.link_active{
+  font-weight: bolder;
+}
+.navlink_container{
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+
+ 

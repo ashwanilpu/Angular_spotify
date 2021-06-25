@@ -1,0 +1,33 @@
+
+  <div>
+    <!-- header of the search component -->
+  <div class="header">
+    <!-- search box -->
+    <div class="search_box">
+        <form style="width: 100%;" (submit)="onSubmit($event)">   
+        <input  class="input" placeholder="Search Track or Artist" type="text"  (input)="onInput($event)"  style="border: none;
+        width: 100%;"/>
+        </form>
+        <mat-icon>search</mat-icon>
+    </div>
+    <!-- userdetails -->
+  <a mat-list-item routerLink="/" style="text-decoration: none;">
+    <div style="display: flex;align-items: center;">
+       <img [src]= "userImage"  style="border-radius: 50%; height: 50px;"/>
+        <span style="color: white;margin-left: 10px;">{{ userName }}</span>
+    </div>
+  </a>
+  </div>
+   <!-- card that contain song name and image -->
+  <div class="album_container"> 
+    <div class="album_card" *ngFor="let track of tracks"> 
+        <a style="text-decoration: none;" href={{track.external_urls.spotify}} target="_blank">
+          <img src="{{track.album.images[1].url }}" style="width: 100%;"/>
+          <div class="album_card_bottom">
+              <span >{{ track.name}}</span>
+          </div>
+      </a>
+      </div>
+     </div>
+</div>
+

@@ -1,0 +1,13 @@
+
+<!-- card that contain like playlist name and image -->
+<div class="album_container"> 
+    <div class="album_card" *ngFor="let playlist of playlists"> 
+        <a style="text-decoration: none;" href={{playlist.external_urls.spotify}} target="_blank">
+            <img src="{{playlist.images[0].url }}" style="width: 100%;"/>
+            <div class="album_card_bottom">
+                <span >{{ playlist.name}}</span>
+                <span    [innerHtml]='playlist.description'></span>
+            </div>
+        </a>
+    </div>
+</div>

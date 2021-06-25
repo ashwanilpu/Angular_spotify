@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav  sidebar" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" style="padding: 10px;">
+    <mat-toolbar style="margin-top: 10px;">
+     
+      <a mat-list-item routerLink="/" style="text-decoration: none;">
+        <div class="logo_container">
+          <img src='https://d2np4vr8r37sds.cloudfront.net/article/11096-symalzkbvi-1551251536.jpg' style="width: 50%;"/>
+            <span style="font-weight: 900;color: white;">Spotify</span> 
+        </div>
+        
+      </a>
+       
+    </mat-toolbar>
+    <mat-nav-list style="margin-top: 20px;">
+      <div class="navlink_container">
+        <mat-icon inline="true">home</mat-icon>
+        <a mat-list-item routerLink="/"  routerLinkActive="link_active"  [routerLinkActiveOptions]="{ exact:true }" style="color: white; width: auto;">Home</a>
+      </div>
+      
+    <div class="navlink_container">
+      <mat-icon inline="true">thumb_up</mat-icon>
+      <a mat-list-item routerLink="/like" routerLinkActive="link_active"  style="color: white; width: auto;">Liked</a>
+    </div>
+      <div class="navlink_container">
+        <mat-icon inline="true" >search</mat-icon>
+        <a mat-list-item routerLink="/search" routerLinkActive="link_active" style="color: white;width: auto;">Search</a>
+      </div>
+      
+      <hr style="width: 135px;color: gray;">
+      <div class="navlink_container">
+        <mat-icon inline="true" >logout</mat-icon>
+        <a mat-list-item href="http://localhost:4200/" routerLinkActive="link_active" style="color: white;width: auto;">logout</a>
+      </div>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style=" background: linear-gradient(transparent, rgba(0, 0, 0, 1));background-color: rgb(91, 87, 115); height: 100vh;">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+         class="btn">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <span style="margin-left: 10px;font-family: serif;font-weight: bold;">Spotify</span>
+      </button>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
